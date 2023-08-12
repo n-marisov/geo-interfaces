@@ -29,7 +29,7 @@ interface LocationFactoryInterface
     /**
      * Создает новый объект из строки
      * @param string $coordinate
-     * @return LocationInterface
+     * @return LocationInterface|null
      */
-    public function fromString( string $coordinate ):LocationInterface;
+    public function fromString( string $coordinate ):?LocationInterface;
 }
