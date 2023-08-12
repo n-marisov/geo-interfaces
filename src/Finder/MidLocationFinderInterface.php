@@ -1,10 +1,10 @@
 <?php
 
-namespace Maris\Symfony\Interfaces\Geo\Finder;
+namespace Maris\Interfaces\Geo\Finder;
 
 
-use Maris\Symfony\Interfaces\Geo\Model\LocationAggregateInterface;
-use Maris\Symfony\Interfaces\Geo\Model\LocationInterface;
+use Maris\Interfaces\Geo\Model\LocationAggregateInterface;
+use Maris\Interfaces\Geo\Model\LocationInterface;
 
 /**
  * Сервисы способные находить среднюю точку

@@ -1,6 +1,6 @@
 <?php
 
-namespace Maris\Symfony\Interfaces\Geo\Model;
+namespace Maris\Interfaces\Geo\Model;
 
 /**
  * Интерфейс для объектов способных возвращать

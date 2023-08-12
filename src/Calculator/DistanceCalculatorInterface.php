@@ -1,8 +1,8 @@
 <?php
 
-namespace Maris\Symfony\Interfaces\Geo\Calculator;
+namespace Maris\Interfaces\Geo\Calculator;
 
-use Maris\Symfony\Interfaces\Geo\Model\LocationAggregateInterface;
+use Maris\Interfaces\Geo\Model\LocationAggregateInterface;
 
 interface DistanceCalculatorInterface
 {

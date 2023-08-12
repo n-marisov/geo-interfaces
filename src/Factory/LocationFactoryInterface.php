@@ -1,9 +1,9 @@
 <?php
 
-namespace Maris\Symfony\Interfaces\Geo\Factory;
+namespace Maris\Interfaces\Geo\Factory;
 
-use Maris\Symfony\Interfaces\Geo\Model\CartesianInterface;
-use Maris\Symfony\Interfaces\Geo\Model\LocationInterface;
+use Maris\Interfaces\Geo\Model\CartesianInterface;
+use Maris\Interfaces\Geo\Model\LocationInterface;
 
 /**
  * Фабрика для создания координат.
