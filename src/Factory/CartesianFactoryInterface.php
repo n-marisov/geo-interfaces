@@ -10,6 +10,15 @@ use Maris\Interfaces\Geo\Model\CartesianInterface;
  */
 interface CartesianFactoryInterface
 {
+    /***
+     * Создает новый объект CartesianInterface по значениям.
+     * @param float $x
+     * @param float $y
+     * @param float $z
+     * @return CartesianInterface
+     */
+    public function new( float $x, float $y, float $z ):CartesianInterface;
+
     /**
      * Преобразует обычные координаты к Декартовым.
      * @param LocationAggregateInterface $location

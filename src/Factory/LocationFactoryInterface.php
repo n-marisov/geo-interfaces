@@ -10,6 +10,14 @@ use Maris\Interfaces\Geo\Model\LocationInterface;
  */
 interface LocationFactoryInterface
 {
+    /**
+     * Создает новый объект по значениям.
+     * @param float $latitude
+     * @param float $longitude
+     * @return LocationInterface
+     */
+    public function new( float $latitude, float $longitude ):LocationInterface;
+
 
     /***
      * Преобразует точку из Декартовой системы в обычную.
