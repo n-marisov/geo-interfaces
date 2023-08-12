@@ -25,4 +25,11 @@ interface LocationFactoryInterface
      * @return LocationInterface
      */
     public function fromCartesian( CartesianInterface $cartesian ):LocationInterface;
+
+    /**
+     * Создает новый объект из строки
+     * @param string $coordinate
+     * @return LocationInterface
+     */
+    public function fromString( string $coordinate ):LocationInterface;
 }
