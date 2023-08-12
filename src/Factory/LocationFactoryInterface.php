@@ -4,6 +4,7 @@ namespace Maris\Interfaces\Geo\Factory;
 
 use Maris\Interfaces\Geo\Model\CartesianInterface;
 use Maris\Interfaces\Geo\Model\LocationInterface;
+use stdClass;
 
 /**
  * Фабрика для создания координат.
@@ -32,4 +33,11 @@ interface LocationFactoryInterface
      * @return LocationInterface|null
      */
     public function fromString( string $coordinate ):?LocationInterface;
+
+    /**
+     * Получает координату из массива GeoJson.
+     * @param string|array|stdClass $coordinateOrGeometry
+     * @return LocationInterface|null
+     */
+    public function fromJson( string|array|stdClass $coordinateOrGeometry ):?LocationInterface;
 }
