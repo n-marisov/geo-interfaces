@@ -6,5 +6,5 @@ use Maris\Interfaces\Geo\Model\LocationAggregateInterface;
 
 interface BoundsFactoryInterface
 {
-    public function fromLocations( LocationAggregateInterface $locations ):BoundsFactoryInterface;
+    public function fromLocations( LocationAggregateInterface ...$locations ):BoundsFactoryInterface;
 }
