@@ -1,9 +1,9 @@
 <?php
 
-namespace Maris\Symfony\Geo\Extra\Interfaces\Finder;
+namespace Maris\Symfony\Geo\Interfaces\Finder;
 
-use Maris\Symfony\Geo\Entity\Location;
 use Maris\Symfony\Geo\Interfaces\LocationAggregateInterface;
+use Maris\Symfony\Geo\Interfaces\Model\LocationInterface;
 
 /**
  * Интерфейс для поиска точки по перпендикуляру к большому кругу.
@@ -17,7 +17,7 @@ interface PerpendicularLocationFinderInterface
      * @param LocationAggregateInterface $start
      * @param LocationAggregateInterface $end
      * @param LocationAggregateInterface $point
-     * @return Location
+     * @return LocationInterface
      */
-    public function findPerpendicularLocation( LocationAggregateInterface $start, LocationAggregateInterface $end,LocationAggregateInterface $point ):Location;
+    public function findPerpendicularLocation( LocationAggregateInterface $start, LocationAggregateInterface $end,LocationAggregateInterface $point ):LocationInterface;
 }

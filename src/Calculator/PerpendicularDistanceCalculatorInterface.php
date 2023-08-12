@@ -1,6 +1,6 @@
 <?php
 
-namespace Maris\Symfony\Geo\Extra\Interfaces\Calculator;
+namespace Maris\Symfony\Geo\Interfaces\Calculator;
 
 use Maris\Symfony\Geo\Interfaces\LocationAggregateInterface;
 

@@ -1,5 +1,5 @@
 {
-  "name": "maris/geo-extra-interfaces",
+  "name": "maris/geo-interfaces",
   "description": "Набор интерфейсов для географических сервисов.",
   "license": "MIT",
   "version": "0.0.1",
@@ -23,7 +23,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "Maris\\Symfony\\Geo\\Extra\\Interfaces\\": "src/"
+      "Maris\\Symfony\\Geo\\Interfaces\\": "src/"
     }
   }
 }

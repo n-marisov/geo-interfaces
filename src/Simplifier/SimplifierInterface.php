@@ -1,6 +1,6 @@
 <?php
 
-namespace Maris\Symfony\Geo\Extra\Interfaces\Simplifier;
+namespace Maris\Symfony\Geo\Interfaces\Simplifier;
 
 use Maris\Symfony\Geo\Interfaces\LocationAggregateInterface;
 
