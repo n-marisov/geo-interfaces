@@ -1,8 +1,8 @@
 <?php
 
-namespace Maris\Symfony\Geo\Interfaces\Calculator;
+namespace Maris\Symfony\Interfaces\Geo\Calculator;
 
-use Maris\Symfony\Geo\Interfaces\Model\LocationAggregateInterface;
+use Maris\Symfony\Interfaces\Geo\Model\LocationAggregateInterface;
 
 /***
  * Интерфейс для вычисления перпендикулярного расстояния.

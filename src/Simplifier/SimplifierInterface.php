@@ -1,8 +1,8 @@
 <?php
 
-namespace Maris\Symfony\Geo\Interfaces\Simplifier;
+namespace Maris\Symfony\Interfaces\Geo\Simplifier;
 
-use Maris\Symfony\Geo\Interfaces\Model\LocationAggregateInterface;
+use Maris\Symfony\Interfaces\Geo\Model\LocationAggregateInterface;
 
 interface SimplifierInterface
 {

@@ -1,9 +1,9 @@
 <?php
 
-namespace Maris\Symfony\Geo\Interfaces\Finder;
+namespace Maris\Symfony\Interfaces\Geo\Finder;
 
-use Maris\Symfony\Geo\Interfaces\Model\LocationAggregateInterface;
-use Maris\Symfony\Geo\Interfaces\Model\LocationInterface;
+use Maris\Symfony\Interfaces\Geo\Model\LocationAggregateInterface;
+use Maris\Symfony\Interfaces\Geo\Model\LocationInterface;
 
 /***
  * Вычисляет промежуточные точки.

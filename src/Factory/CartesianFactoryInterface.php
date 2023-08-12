@@ -1,9 +1,9 @@
 <?php
 
-namespace Maris\Symfony\Geo\Interfaces\Factory;
+namespace Maris\Symfony\Interfaces\Geo\Factory;
 
-use Maris\Symfony\Geo\Interfaces\Model\LocationAggregateInterface;
-use Maris\Symfony\Geo\Interfaces\Model\CartesianInterface;
+use Maris\Symfony\Interfaces\Geo\Model\LocationAggregateInterface;
+use Maris\Symfony\Interfaces\Geo\Model\CartesianInterface;
 
 /**
  * Фабрика для создания Декартовых координат.

@@ -21,7 +21,7 @@
   ],
   "autoload": {
     "psr-4": {
-      "Maris\\Symfony\\Geo\\Interfaces\\": "src/"
+      "Maris\\Symfony\\Interfaces\\Geo\\": "src/"
     }
   }
 }

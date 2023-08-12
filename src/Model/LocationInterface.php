@@ -1,6 +1,6 @@
 <?php
 
-namespace Maris\Symfony\Geo\Interfaces\Model;
+namespace Maris\Symfony\Interfaces\Geo\Model;
 
 /**
  * Интерфейс точки в прямой системе координат.
