@@ -2,7 +2,7 @@
 
 namespace Maris\Symfony\Geo\Interfaces\Factory;
 
-use Maris\Symfony\Geo\Interfaces\LocationAggregateInterface;
+use Maris\Symfony\Geo\Interfaces\Model\LocationAggregateInterface;
 use Maris\Symfony\Geo\Interfaces\Model\CartesianInterface;
 
 /**

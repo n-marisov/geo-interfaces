@@ -2,7 +2,7 @@
 
 namespace Maris\Symfony\Geo\Interfaces\Simplifier;
 
-use Maris\Symfony\Geo\Interfaces\LocationAggregateInterface;
+use Maris\Symfony\Geo\Interfaces\Model\LocationAggregateInterface;
 
 interface SimplifierInterface
 {

@@ -2,7 +2,7 @@
 
 namespace Maris\Symfony\Geo\Interfaces\Calculator;
 
-use Maris\Symfony\Geo\Interfaces\LocationAggregateInterface;
+use Maris\Symfony\Geo\Interfaces\Model\LocationAggregateInterface;
 
 /***
  * Интерфейс для вычисления перпендикулярного расстояния.
