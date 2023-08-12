@@ -14,13 +14,6 @@ interface PolylineFactoryInterface
      */
     public function new( iterable $coordinates ) : PolylineInterface;
 
-    /**
-     * Получает полилинию из строки.
-     * @param string $string
-     * @return PolylineInterface|null
-     */
-    public function fromString( string $string ) : ?PolylineInterface;
-
     /***
      * Получает полилинию из GeoJson.
      * @param string|array|stdClass $coordinatesOrGeometry
