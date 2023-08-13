@@ -5,7 +5,7 @@ namespace Maris\Interfaces\Geo\Model;
 /**
  * Интерфейс фигуры на карте.
  */
-interface GeometryInterface extends BoundsAggregateInterface
+interface GeometryInterface extends BoundsAggregateInterface,GeoJsonSerializable
 {
-    public function getId():?int;
+
 }
