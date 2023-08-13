@@ -32,7 +32,7 @@ interface PolylineInterface extends GeometryInterface, IteratorAggregate, Counta
      * @param LocationInterface|LocationAggregateInterface $location
      * @return $this
      */
-    public function add( LocationInterface|LocationAggregateInterface $location ):static;
+    public function add( LocationInterface|LocationAggregateInterface $location ):self;
 
     /***
      * Определяет наличие точки в полилинии.
