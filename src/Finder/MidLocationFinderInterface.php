@@ -14,9 +14,9 @@ interface MidLocationFinderInterface
 {
     /**
      * Вычисляет среднюю точку
-     * @param LocationAggregateInterface $start
-     * @param LocationAggregateInterface $end
+     * @param LocationAggregateInterface|LocationInterface $start
+     * @param LocationAggregateInterface|LocationInterface $end
      * @return LocationInterface
      */
-    public function findMidLocation( LocationAggregateInterface $start, LocationAggregateInterface $end ):LocationInterface;
+    public function findMidLocation( LocationAggregateInterface|LocationInterface $start, LocationAggregateInterface|LocationInterface $end ):LocationInterface;
 }

@@ -2,6 +2,7 @@
 
 namespace Maris\Interfaces\Geo\Finder;
 
+use Maris\Interfaces\Geo\Factory\LocationFactoryInterface;
 use Maris\Interfaces\Geo\Model\LocationAggregateInterface;
 use Maris\Interfaces\Geo\Model\LocationInterface;
 
@@ -11,10 +12,10 @@ use Maris\Interfaces\Geo\Model\LocationInterface;
 interface IntermediateLocationFinderInterface
 {
     /***
-     * @param LocationAggregateInterface $start
-     * @param LocationAggregateInterface $end
+     * @param LocationAggregateInterface|LocationInterface $start
+     * @param LocationAggregateInterface|LocationInterface $end
      * @param float $percent
      * @return LocationInterface
      */
-    public function findIntermediateLocation( LocationAggregateInterface $start, LocationAggregateInterface $end , float $percent ):LocationInterface;
+    public function findIntermediateLocation( LocationAggregateInterface|LocationInterface $start, LocationAggregateInterface|LocationInterface $end , float $percent ):LocationInterface;
 }

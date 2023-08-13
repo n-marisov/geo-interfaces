@@ -10,5 +10,11 @@ use Maris\Interfaces\Geo\Model\LocationInterface;
  */
 interface DestinationFinderInterface
 {
-    public function findDestination( LocationAggregateInterface $location, float $initialBearing, float $distance ):LocationInterface;
+    /***
+     * @param LocationAggregateInterface|LocationInterface $location
+     * @param float $initialBearing
+     * @param float $distance
+     * @return LocationInterface
+     */
+    public function findDestination( LocationAggregateInterface|LocationInterface $location, float $initialBearing, float $distance ):LocationInterface;
 }
