@@ -4,7 +4,12 @@ namespace Maris\Interfaces\Geo\Model;
 
 use Countable;
 use IteratorAggregate;
+use Maris\Interfaces\Geo\Calculator\BearingCalculatorInterface;
 use Maris\Interfaces\Geo\Calculator\DistanceCalculatorInterface;
+use Maris\Interfaces\Geo\Determinant\IntersectionDeterminantInterface;
+use Maris\Interfaces\Geo\Determinant\OrientationDeterminantInterface;
+use Maris\Interfaces\Geo\Finder\IntermediateLocationFinderInterface;
+use Maris\Interfaces\Geo\Finder\MidLocationFinderInterface;
 use Traversable;
 
 /**
@@ -86,6 +91,35 @@ interface PolylineInterface extends GeometryInterface, IteratorAggregate, Counta
     public function getLength( DistanceCalculatorInterface $calculator ):float;
 
     /***
+     * Возвращает прямой азимут между первой и последней точкой.
+     * @param BearingCalculatorInterface $calculator
+     * @return float
+     */
+    public function getInitialBearing( BearingCalculatorInterface $calculator ):float;
+
+    /***
+     * Возвращает конечный азимут между первой и последней точкой.
+     * @param BearingCalculatorInterface $calculator
+     * @return float
+     */
+    public function getFinalBearing( BearingCalculatorInterface $calculator ):float;
+
+    /**
+     * Возвращает среднюю точку между первой и последней точкой.
+     * @param MidLocationFinderInterface $finder
+     * @return LocationInterface|LocationAggregateInterface|null
+     */
+    public function getMidLocation( MidLocationFinderInterface $finder ):LocationInterface|LocationAggregateInterface|null;
+
+    /**
+     * Возвращает промежуточную точку между первой и последней точкой.
+     * @param IntermediateLocationFinderInterface $finder
+     * @param float $percent
+     * @return LocationInterface|LocationAggregateInterface|null
+     */
+    public function getIntermediateLocation( IntermediateLocationFinderInterface $finder , float $percent ):LocationInterface|LocationAggregateInterface|null;
+
+    /***
      * Возвращает полилинию развернутую в обратную сторону.
      * @return PolylineInterface
      */
@@ -96,4 +130,21 @@ interface PolylineInterface extends GeometryInterface, IteratorAggregate, Counta
      * @return Traversable<LocationInterface>
      */
     public function getIterator(): Traversable;
+
+    /**
+     * Определяет, пересекаются ли фигуры.
+     * @param IntersectionDeterminantInterface $determinant
+     * @param GeometryInterface $geometry
+     * @return bool
+     */
+    public function intersects( IntersectionDeterminantInterface $determinant, GeometryInterface $geometry  ):bool;
+
+    /**
+     * Определяет ориентацию точки относительно
+     * первой и последней точки полилинии.
+     * @param OrientationDeterminantInterface $determinant
+     * @param LocationInterface|LocationAggregateInterface $location
+     * @return int<-1,1>
+     */
+    public function getOrientation( OrientationDeterminantInterface $determinant, LocationInterface|LocationAggregateInterface $location ):int;
 }
