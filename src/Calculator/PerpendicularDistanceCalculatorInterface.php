@@ -3,6 +3,7 @@
 namespace Maris\Interfaces\Geo\Calculator;
 
 use Maris\Interfaces\Geo\Model\LocationAggregateInterface;
+use Maris\Interfaces\Geo\Model\LocationInterface;
 
 /***
  * Интерфейс для вычисления перпендикулярного расстояния.
@@ -13,10 +14,10 @@ interface PerpendicularDistanceCalculatorInterface
      * Вычисляет расстояния перпендикуляру
      * между линией большого круга образованной
      * первыми двумя точками и третей точкой.
-     * @param LocationAggregateInterface $start
-     * @param LocationAggregateInterface $end
-     * @param LocationAggregateInterface $point
+     * @param LocationAggregateInterface|LocationInterface $start
+     * @param LocationAggregateInterface|LocationInterface $end
+     * @param LocationAggregateInterface|LocationInterface $point
      * @return float
      */
-    public function calculatePerpendicularDistance( LocationAggregateInterface $start, LocationAggregateInterface $end,LocationAggregateInterface $point ):float;
+    public function calculatePerpendicularDistance( LocationAggregateInterface|LocationInterface $start, LocationAggregateInterface|LocationInterface $end,LocationAggregateInterface|LocationInterface $point ):float;
 }
