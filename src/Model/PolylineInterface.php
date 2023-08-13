@@ -132,6 +132,12 @@ interface PolylineInterface extends GeometryInterface, IteratorAggregate, Counta
     public function getIterator(): Traversable;
 
     /**
+     * Возвращает массив из всех точек полилинии.
+     * @return array
+     */
+    public function toArray():array;
+
+    /**
      * Определяет, пересекаются ли фигуры.
      * @param IntersectionDeterminantInterface $determinant
      * @param GeometryInterface $geometry
