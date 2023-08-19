@@ -5,7 +5,6 @@ namespace Maris\Interfaces\Geo\AbstractModel;
 use Maris\Interfaces\Geo\Factory\FeatureFactoryInterface;
 use Maris\Interfaces\Geo\Model\BoundsInterface;
 use Maris\Interfaces\Geo\Model\FeatureInterface;
-use Maris\Interfaces\Geo\Model\GeometryInterface;
 use Maris\Interfaces\Geo\Model\LocationInterface;
 
 /**
@@ -50,4 +49,23 @@ abstract class AbstractLocation implements LocationInterface
     {
         return $factory->fromGeometry( $this );
     }
+
+    public function getBounds(): BoundsInterface
+    {
+        return new class(
+            $this->getLatitude(),
+            $this->getLongitude(),
+            $this->getLatitude(),
+            $this->getLongitude()
+        ) extends AbstractBounds{};
+    }
+
+    public function jsonSerialize(): array
+    {
+       return [
+           "type" => "Point",
+           "coordinates" => [$this->getLongitude(),$this->getLatitude()]
+       ];
+    }
+
 }
