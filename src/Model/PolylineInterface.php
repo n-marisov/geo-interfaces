@@ -4,6 +4,7 @@ namespace Maris\Interfaces\Geo\Model;
 
 use Countable;
 use IteratorAggregate;
+use Maris\Interfaces\Geo\Aggregate\LocationAggregateInterface;
 use Maris\Interfaces\Geo\Calculator\BearingCalculatorInterface;
 use Maris\Interfaces\Geo\Calculator\DistanceCalculatorInterface;
 use Maris\Interfaces\Geo\Determinant\IntersectionDeterminantInterface;
@@ -130,12 +131,6 @@ interface PolylineInterface extends GeometryInterface, IteratorAggregate, Counta
      * @return Traversable<LocationInterface>
      */
     public function getIterator(): Traversable;
-
-    /**
-     * Возвращает массив из всех точек полилинии.
-     * @return array
-     */
-    public function toArray():array;
 
     /**
      * Определяет, пересекаются ли фигуры.

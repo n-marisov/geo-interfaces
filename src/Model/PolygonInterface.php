@@ -9,6 +9,9 @@ use Maris\Interfaces\Geo\Determinant\IntersectionDeterminantInterface;
 
 /***
  * Интерфейс полигона.
+ * Полигон представляет собой коллекцию
+ * полилиний где первая полилиния является наружнним периметром полигона,
+ * а все последующие являются вырезами полигона (дырка от бублика).
  */
 interface PolygonInterface extends GeometryInterface, IteratorAggregate, Countable
 {
@@ -22,9 +25,10 @@ interface PolygonInterface extends GeometryInterface, IteratorAggregate, Countab
     /**
      * Вычисляет площадь полигона.
      * @param AreaCalculatorInterface $calculator
+     * @param bool $isFull Если false, то внутренние полигоны игнорируются.
      * @return float
      */
-    public function getArea( AreaCalculatorInterface $calculator ):float;
+    public function getArea( AreaCalculatorInterface $calculator , bool $isFull ):float;
 
     /**
      * Определяет, находится ли фигура внутри многоугольника.
@@ -40,10 +44,4 @@ interface PolygonInterface extends GeometryInterface, IteratorAggregate, Countab
     * @return bool
     */
     public function intersects( IntersectionDeterminantInterface $determinant, GeometryInterface $geometry  ):bool;
-
-    /**
-     * Приводит объект к массиву.
-     * @return array< array<LocationInterface|LocationAggregateInterface> >
-     */
-    public function toArray():array;
 }

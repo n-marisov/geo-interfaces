@@ -3,9 +3,9 @@
 namespace Maris\Interfaces\Geo\Model;
 
 /**
- * Интерфейс точки в прямой системе координат.
+ * Интерфейс точки в географической системе координат.
  */
-interface LocationInterface
+interface LocationInterface extends GeometryInterface
 {
     /**
      * Возвращает широту.
@@ -18,4 +18,5 @@ interface LocationInterface
      * @return float
      */
     public function getLongitude():float;
+
 }

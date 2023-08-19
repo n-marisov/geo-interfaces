@@ -3,7 +3,7 @@
 namespace Maris\Interfaces\Geo\Finder;
 
 
-use Maris\Interfaces\Geo\Model\LocationAggregateInterface;
+use Maris\Interfaces\Geo\Aggregate\LocationAggregateInterface;
 use Maris\Interfaces\Geo\Model\LocationInterface;
 
 /**

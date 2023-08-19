@@ -3,14 +3,16 @@
 namespace Maris\Interfaces\Geo\AbstractModel;
 
 use ArrayIterator;
+use Maris\Interfaces\Geo\Aggregate\LocationAggregateInterface;
 use Maris\Interfaces\Geo\Calculator\BearingCalculatorInterface;
 use Maris\Interfaces\Geo\Calculator\DistanceCalculatorInterface;
 use Maris\Interfaces\Geo\Determinant\IntersectionDeterminantInterface;
 use Maris\Interfaces\Geo\Determinant\OrientationDeterminantInterface;
+use Maris\Interfaces\Geo\Factory\FeatureFactoryInterface;
 use Maris\Interfaces\Geo\Finder\IntermediateLocationFinderInterface;
 use Maris\Interfaces\Geo\Finder\MidLocationFinderInterface;
+use Maris\Interfaces\Geo\Model\FeatureInterface;
 use Maris\Interfaces\Geo\Model\GeometryInterface;
-use Maris\Interfaces\Geo\Model\LocationAggregateInterface;
 use Maris\Interfaces\Geo\Model\LocationInterface;
 use Maris\Interfaces\Geo\Model\PolylineInterface;
 use Traversable;
@@ -40,41 +42,10 @@ abstract class AbstractPolyline implements PolylineInterface
         return $this->get( $this->count() - 1 );
     }
 
-    /*public function add(LocationInterface|LocationAggregateInterface $location): PolylineInterface
-    {
-        $this->coordinates[] = $location;
-        return $this;
-    }*/
-
     public function contains(LocationInterface|LocationAggregateInterface $location): bool
     {
         return in_array( $location, $this->toArray() );
     }
-
-   /* public function get(int $position): LocationInterface|LocationAggregateInterface|null
-    {
-        return $this->coordinates[ $position ] ?? null;
-    }*/
-
-    /*public function remove(LocationInterface|int|LocationAggregateInterface $locationOrPosition): LocationInterface|LocationAggregateInterface|null
-    {
-        if(is_numeric($locationOrPosition))
-        {
-            if(isset($this->coordinates[$locationOrPosition])){
-                $location = $this->coordinates[$locationOrPosition];
-                unset($this->coordinates[$locationOrPosition]);
-                return $location;
-            }
-            return null;
-        }
-
-        $position = array_search($locationOrPosition,$this->coordinates);
-
-        if( $position !== false )
-            return $this->remove( $position );
-
-        return null;
-    }*/
 
     public function addUnique(LocationInterface|LocationAggregateInterface $location): bool
     {
@@ -96,7 +67,9 @@ abstract class AbstractPolyline implements PolylineInterface
         $sections = [];
 
         for( $i = 0, $j = 1; isset($coordinates[$j]); $i = $j, $j++)
-            $sections[] = new static( $coordinates[$i], $coordinates[$j] );
+            $sections[] = (new static())
+                ->add($coordinates[$i])
+                ->add($coordinates[$j]);
 
         return $sections;
     }
@@ -133,18 +106,17 @@ abstract class AbstractPolyline implements PolylineInterface
 
     public function getReverse(): PolylineInterface
     {
-        return new static( ...array_reverse( $this->toArray() ));
+        $instance = new static();
+        foreach (array_reverse( $this->toArray() ) as $item)
+            $instance->add($item);
+
+        return $instance;
     }
 
     public function getIterator(): Traversable
     {
         return new ArrayIterator( $this->toArray() );
     }
-
-    /*public function toArray(): array
-    {
-        return $this->coordinates;
-    }*/
 
     public function intersects(IntersectionDeterminantInterface $determinant, GeometryInterface $geometry): bool
     {
@@ -154,5 +126,11 @@ abstract class AbstractPolyline implements PolylineInterface
     public function getOrientation(OrientationDeterminantInterface $determinant, LocationInterface|LocationAggregateInterface $location): int
     {
         return $determinant->determineOrientation( $this, $location );
+    }
+
+
+    public function toFeature( FeatureFactoryInterface $factory ): FeatureInterface
+    {
+        return $factory->fromGeometry( $this );
     }
 }

@@ -1,6 +1,8 @@
 <?php
 
-namespace Maris\Interfaces\Geo\Model;
+namespace Maris\Interfaces\Geo\Aggregate;
+
+use Maris\Interfaces\Geo\Model\LocationInterface;
 
 /**
  * Интерфейс для объектов способных возвращать

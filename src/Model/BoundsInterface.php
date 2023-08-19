@@ -2,7 +2,12 @@
 
 namespace Maris\Interfaces\Geo\Model;
 
-interface BoundsInterface
+use JsonSerializable;
+
+/***
+ * Интерфейс объекта границ фигуры.
+ */
+interface BoundsInterface extends JsonSerializable
 {
     /**
      * Возвращает северную границу.
@@ -27,4 +32,10 @@ interface BoundsInterface
      * @return float
      */
     public function getEast():float;
+
+    /**
+     * Приводится к объекту bbox GeoJson.
+     * @return float[]
+     */
+    public function jsonSerialize(): array;
 }

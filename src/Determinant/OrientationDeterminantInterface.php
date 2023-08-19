@@ -2,9 +2,9 @@
 
 namespace Maris\Interfaces\Geo\Determinant;
 
-use Maris\Interfaces\Geo\Model\LocationAggregateInterface;
+use Maris\Interfaces\Geo\Aggregate\LocationAggregateInterface;
+use Maris\Interfaces\Geo\Aggregate\PolylineAggregateInterface;
 use Maris\Interfaces\Geo\Model\LocationInterface;
-use Maris\Interfaces\Geo\Model\PolylineAggregateInterface;
 use Maris\Interfaces\Geo\Model\PolylineInterface;
 
 /**

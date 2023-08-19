@@ -2,8 +2,8 @@
 
 namespace Maris\Interfaces\Geo\Factory;
 
+use Maris\Interfaces\Geo\Aggregate\LocationAggregateInterface;
 use Maris\Interfaces\Geo\Model\BoundsInterface;
-use Maris\Interfaces\Geo\Model\LocationAggregateInterface;
 use Maris\Interfaces\Geo\Model\LocationInterface;
 
 interface BoundsFactoryInterface
