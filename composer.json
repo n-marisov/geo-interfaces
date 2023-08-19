@@ -2,7 +2,7 @@
   "name": "maris/geo-interfaces",
   "description": "Набор интерфейсов для географических сервисов.",
   "license": "MIT",
-  "version": "0.0.1",
+  "version": "1.0.0",
   "type": "library",
   "authors": [
     {
@@ -13,12 +13,6 @@
   "require": {
     "php": ">=8.1"
   },
-  "repositories": [
-    {
-      "type": "git",
-      "url": "https://github.com/n-marisov/symfony-location-bundle.git"
-    }
-  ],
   "autoload": {
     "psr-4": {
       "Maris\\Interfaces\\Geo\\": "src/"
