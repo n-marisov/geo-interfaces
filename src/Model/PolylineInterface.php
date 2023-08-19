@@ -11,6 +11,7 @@ use Maris\Interfaces\Geo\Determinant\IntersectionDeterminantInterface;
 use Maris\Interfaces\Geo\Determinant\OrientationDeterminantInterface;
 use Maris\Interfaces\Geo\Finder\IntermediateLocationFinderInterface;
 use Maris\Interfaces\Geo\Finder\MidLocationFinderInterface;
+use Maris\Interfaces\Geo\Iterator\LocationsIteratorInterface;
 use Traversable;
 
 /**
@@ -128,9 +129,9 @@ interface PolylineInterface extends GeometryInterface, IteratorAggregate, Counta
 
     /**
      * Возвращает итератор для переборки всех точек полилинии.
-     * @return Traversable<LocationInterface>
+     * @return LocationsIteratorInterface
      */
-    public function getIterator(): Traversable;
+    public function getIterator(): LocationsIteratorInterface;
 
     /**
      * Определяет, пересекаются ли фигуры.

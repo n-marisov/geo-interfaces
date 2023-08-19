@@ -6,6 +6,8 @@ use IteratorAggregate;
 use Maris\Interfaces\Geo\Calculator\AreaCalculatorInterface;
 use Maris\Interfaces\Geo\Calculator\DistanceCalculatorInterface;
 use Maris\Interfaces\Geo\Determinant\IntersectionDeterminantInterface;
+use Maris\Interfaces\Geo\Iterator\LocationsIteratorInterface;
+use Traversable;
 
 /***
  * Интерфейс полигона.
@@ -44,4 +46,10 @@ interface PolygonInterface extends GeometryInterface, IteratorAggregate, Countab
     * @return bool
     */
     public function intersects( IntersectionDeterminantInterface $determinant, GeometryInterface $geometry  ):bool;
+
+    /***
+     * Перебирает точки наружного кольца полигона.
+     * @return LocationsIteratorInterface
+     */
+    public function getIterator(): LocationsIteratorInterface;
 }
