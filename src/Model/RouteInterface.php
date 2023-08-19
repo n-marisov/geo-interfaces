@@ -9,8 +9,16 @@ use Maris\Interfaces\Geo\Aggregate\PolylineAggregateInterface;
  */
 interface RouteInterface extends PolylineAggregateInterface
 {
+    /***
+     * Протяженность маршрута.
+     * @return float
+     */
     public function getDistance():float;
 
+    /***
+     * Время в пути по маршруту.
+     * @return float
+     */
     public function getDuration():float;
 
     /***
