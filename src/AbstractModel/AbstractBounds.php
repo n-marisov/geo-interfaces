@@ -64,6 +64,10 @@ abstract class AbstractBounds implements BoundsInterface
         return $this->east;
     }
 
+    public function jsonSerialize(): array
+    {
+        return [$this->north,$this->west,$this->south,$this->east];
+    }
 
 
 }
