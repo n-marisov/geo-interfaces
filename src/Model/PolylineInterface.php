@@ -12,6 +12,7 @@ use Maris\Interfaces\Geo\Determinant\OrientationDeterminantInterface;
 use Maris\Interfaces\Geo\Finder\IntermediateLocationFinderInterface;
 use Maris\Interfaces\Geo\Finder\MidLocationFinderInterface;
 use Maris\Interfaces\Geo\Iterator\LocationsIteratorInterface;
+use Maris\Interfaces\Geo\Simplifier\SimplifierInterface;
 use Traversable;
 
 /**
@@ -149,4 +150,11 @@ interface PolylineInterface extends GeometryInterface, IteratorAggregate, Counta
      * @return int<-1,1>
      */
     public function getOrientation( OrientationDeterminantInterface $determinant, LocationInterface|LocationAggregateInterface $location ):int;
+
+    /**
+     * Упрощает полилинию.
+     * @param SimplifierInterface $simplifier
+     * @return $this
+     */
+    public function simplify( SimplifierInterface $simplifier ):static;
 }
