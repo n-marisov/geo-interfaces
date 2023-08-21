@@ -8,7 +8,7 @@ use Maris\Interfaces\Geo\Model\LocationInterface;
 use Maris\Interfaces\Geo\Model\PolylineInterface;
 
 /**
- * Определяет ориентацию фигур относительно друг друга.
+ * Определяет ориентацию точки относительно начала и конца полилинии.
  */
 interface OrientationDeterminantInterface
 {

@@ -10,6 +10,9 @@ use Maris\Interfaces\Geo\Aggregate\BoundsAggregateInterface;
  */
 interface FeatureInterface extends BoundsAggregateInterface, JsonSerializable
 {
+    /***
+     * @return GeometryInterface
+     */
     public function getGeometry():GeometryInterface;
 
     public function getProperties():?array;

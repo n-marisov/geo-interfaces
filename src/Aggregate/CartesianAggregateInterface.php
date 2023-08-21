@@ -10,5 +10,9 @@ use Maris\Interfaces\Geo\Model\CartesianInterface;
  */
 interface CartesianAggregateInterface
 {
-    public function getCartesian():CartesianInterface;
+    /***
+     * Возвращает Декартову координату.
+     * @return CartesianInterface|null
+     */
+    public function getCartesian():?CartesianInterface;
 }

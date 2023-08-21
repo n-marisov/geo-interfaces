@@ -8,7 +8,11 @@ use Maris\Interfaces\Geo\Model\PolygonInterface;
  * Интерфейс для объектов которые могут содержать
  * полигон.
  */
-interface PolygonAggregateInterface
+interface PolygonAggregateInterface extends GeometryAggregateInterface
 {
-    public function getPolygon():PolygonInterface;
+    /***
+     * Возвращает полигон.
+     * @return PolygonInterface|null
+     */
+    public function getGeometry():?PolygonInterface;
 }

@@ -10,5 +10,5 @@ use Maris\Interfaces\Geo\Model\FeatureInterface;
  */
 interface FeaturesIteratorInterface extends Iterator
 {
-    public function current(): FeatureInterface;
+    public function current(): ?FeatureInterface;
 }

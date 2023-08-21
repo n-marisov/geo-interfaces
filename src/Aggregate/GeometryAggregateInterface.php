@@ -4,7 +4,14 @@ namespace Maris\Interfaces\Geo\Aggregate;
 
 use Maris\Interfaces\Geo\Model\GeometryInterface;
 
+/**
+ * Интерфейс для объектов способных хранить внутри себя любую географическую фигуру.
+ */
 interface GeometryAggregateInterface
 {
-    public function getGeometry():GeometryInterface;
+    /***
+     * Возвращает географическую фигуру.
+     * @return GeometryInterface|null
+     */
+    public function getGeometry():?GeometryInterface;
 }

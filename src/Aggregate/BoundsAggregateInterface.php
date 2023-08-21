@@ -11,7 +11,7 @@ interface BoundsAggregateInterface
 {
     /**
      * Возвращает объект границ.
-     * @return BoundsInterface
+     * @return BoundsInterface|null
      */
-    public function getBounds():BoundsInterface;
+    public function getBounds():?BoundsInterface;
 }

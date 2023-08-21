@@ -4,6 +4,9 @@ namespace Maris\Interfaces\Geo\Model;
 
 use Maris\Interfaces\Geo\Aggregate\LocationAggregateInterface;
 
+/***
+ * Интерфейс путевой точки.
+ */
 interface WaypointInterface extends LocationAggregateInterface
 {
     /**

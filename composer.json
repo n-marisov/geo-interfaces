@@ -2,7 +2,7 @@
   "name": "maris/geo-interfaces",
   "description": "Набор интерфейсов для географических сервисов.",
   "license": "MIT",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "type": "library",
   "authors": [
     {

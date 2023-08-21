@@ -2,6 +2,7 @@
 
 namespace Maris\Interfaces\Geo\Factory;
 
+use Maris\Interfaces\Geo\Aggregate\LocationAggregateInterface;
 use Maris\Interfaces\Geo\Model\CartesianInterface;
 use Maris\Interfaces\Geo\Model\LocationInterface;
 use stdClass;
@@ -19,6 +20,12 @@ interface LocationFactoryInterface
      */
     public function new( float $latitude, float $longitude ):LocationInterface;
 
+    /***
+     * Создает точку из точки.
+     * @param LocationInterface|LocationAggregateInterface $location
+     * @return LocationInterface
+     */
+    public function fromLocation( LocationInterface|LocationAggregateInterface $location ):LocationInterface;
 
     /***
      * Преобразует точку из Декартовой системы в обычную.

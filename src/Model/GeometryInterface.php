@@ -2,13 +2,14 @@
 
 namespace Maris\Interfaces\Geo\Model;
 
+use JsonSerializable;
 use Maris\Interfaces\Geo\Aggregate\BoundsAggregateInterface;
 use Maris\Interfaces\Geo\Factory\FeatureFactoryInterface;
 
 /**
  * Интерфейс фигуры на карте.
  */
-interface GeometryInterface extends BoundsAggregateInterface, \JsonSerializable
+interface GeometryInterface extends BoundsAggregateInterface, JsonSerializable
 {
     /**
      * Приводит фигуру к массиву.

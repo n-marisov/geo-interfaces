@@ -2,23 +2,14 @@
 
 namespace Maris\Interfaces\Geo\Model;
 
+use Maris\Interfaces\Geo\Aggregate\DistanceAggregateInterface;
+use Maris\Interfaces\Geo\Aggregate\DurationAggregateInterface;
 use Maris\Interfaces\Geo\Aggregate\PolylineAggregateInterface;
 
 /**
  * Один шаг маршрута.
  */
-interface StepInterface extends PolylineAggregateInterface
+interface StepInterface extends PolylineAggregateInterface,DistanceAggregateInterface,DurationAggregateInterface
 {
-    /**
-     * Расстояние шага.
-     * @return float
-     */
-    public function getDistance():float;
-
-    /**
-     * Время прохождения шага.
-     * @return float
-     */
-    public function getDuration():float;
 
 }

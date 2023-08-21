@@ -7,7 +7,7 @@ use IteratorAggregate;
 use Maris\Interfaces\Geo\Aggregate\LocationAggregateInterface;
 use Maris\Interfaces\Geo\Calculator\BearingCalculatorInterface;
 use Maris\Interfaces\Geo\Calculator\DistanceCalculatorInterface;
-use Maris\Interfaces\Geo\Determinant\IntersectionDeterminantInterface;
+use Maris\Interfaces\Geo\Determinant\GeometriesIntersectServiceInterface;
 use Maris\Interfaces\Geo\Determinant\OrientationDeterminantInterface;
 use Maris\Interfaces\Geo\Finder\IntermediateLocationFinderInterface;
 use Maris\Interfaces\Geo\Finder\MidLocationFinderInterface;
@@ -136,11 +136,11 @@ interface PolylineInterface extends GeometryInterface, IteratorAggregate, Counta
 
     /**
      * Определяет, пересекаются ли фигуры.
-     * @param IntersectionDeterminantInterface $determinant
+     * @param GeometriesIntersectServiceInterface $determinant
      * @param GeometryInterface $geometry
      * @return bool
      */
-    public function intersects( IntersectionDeterminantInterface $determinant, GeometryInterface $geometry  ):bool;
+    public function intersects( GeometriesIntersectServiceInterface $determinant, GeometryInterface $geometry  ):bool;
 
     /**
      * Определяет ориентацию точки относительно

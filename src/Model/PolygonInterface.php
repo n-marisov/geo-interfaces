@@ -5,14 +5,13 @@ use Countable;
 use IteratorAggregate;
 use Maris\Interfaces\Geo\Calculator\AreaCalculatorInterface;
 use Maris\Interfaces\Geo\Calculator\DistanceCalculatorInterface;
-use Maris\Interfaces\Geo\Determinant\IntersectionDeterminantInterface;
+use Maris\Interfaces\Geo\Determinant\GeometriesIntersectServiceInterface;
 use Maris\Interfaces\Geo\Iterator\LocationsIteratorInterface;
-use Traversable;
 
 /***
  * Интерфейс полигона.
  * Полигон представляет собой коллекцию
- * полилиний где первая полилиния является наружнним периметром полигона,
+ * полилиний где первая полилиния является наружном периметром полигона,
  * а все последующие являются вырезами полигона (дырка от бублика).
  */
 interface PolygonInterface extends GeometryInterface, IteratorAggregate, Countable
@@ -41,11 +40,11 @@ interface PolygonInterface extends GeometryInterface, IteratorAggregate, Countab
 
     /**
     * Определяет, пересекаются ли фигуры.
-    * @param IntersectionDeterminantInterface $determinant
+    * @param GeometriesIntersectServiceInterface $determinant
     * @param GeometryInterface $geometry
     * @return bool
     */
-    public function intersects( IntersectionDeterminantInterface $determinant, GeometryInterface $geometry  ):bool;
+    public function intersects( GeometriesIntersectServiceInterface $determinant, GeometryInterface $geometry  ):bool;
 
     /***
      * Перебирает точки наружного кольца полигона.
