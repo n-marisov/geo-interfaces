@@ -2,6 +2,7 @@
 
 namespace Maris\Interfaces\Geo\Determinant;
 
+use Maris\Interfaces\Geo\Aggregate\BoundsAggregateInterface;
 use Maris\Interfaces\Geo\Aggregate\GeometryAggregateInterface;
 use Maris\Interfaces\Geo\Model\BoundsInterface;
 use Maris\Interfaces\Geo\Model\GeometryInterface;
@@ -13,11 +14,11 @@ interface BoundsIntersectServiceInterface
 {
     /**
      * Определяет, пересекаются объекты границ.
-     * @param BoundsInterface $boundsOne
-     * @param BoundsInterface $boundsTwo
+     * @param BoundsInterface|BoundsAggregateInterface $boundsOne
+     * @param BoundsInterface|BoundsAggregateInterface $boundsTwo
      * @return bool
      */
-    public function intersectBounds( BoundsInterface $boundsOne, BoundsInterface $boundsTwo ):bool;
+    public function intersectBounds( BoundsInterface|BoundsAggregateInterface $boundsOne, BoundsInterface|BoundsAggregateInterface $boundsTwo ):bool;
 
     /***
      * Определяет пересечение географической фигуры и объекта границ.
