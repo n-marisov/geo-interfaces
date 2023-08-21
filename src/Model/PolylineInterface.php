@@ -5,21 +5,10 @@ namespace Maris\Interfaces\Geo\Model;
 use Countable;
 use IteratorAggregate;
 use Maris\Interfaces\Geo\Aggregate\LocationAggregateInterface;
-use Maris\Interfaces\Geo\Calculator\BearingCalculatorInterface;
-use Maris\Interfaces\Geo\Calculator\DistanceCalculatorInterface;
-use Maris\Interfaces\Geo\Determinant\GeometriesIntersectServiceInterface;
-use Maris\Interfaces\Geo\Determinant\OrientationDeterminantInterface;
-use Maris\Interfaces\Geo\Finder\IntermediateLocationFinderInterface;
-use Maris\Interfaces\Geo\Finder\MidLocationFinderInterface;
 use Maris\Interfaces\Geo\Iterator\LocationsIteratorInterface;
-use Maris\Interfaces\Geo\Simplifier\SimplifierInterface;
-use Traversable;
 
 /**
  * Интерфейс полилинии.
- * @template TKey as positive-int
- * @template TValue as LocationInterface
- * @template-implements Traversable<TKey, TValue>
  */
 interface PolylineInterface extends GeometryInterface, IteratorAggregate, Countable
 {
@@ -48,7 +37,7 @@ interface PolylineInterface extends GeometryInterface, IteratorAggregate, Counta
      * @return bool
      */
     public function contains( LocationInterface|LocationAggregateInterface $location ):bool;
-    //public function has( LocationInterface|LocationAggregateInterface $location ):bool;
+
     /**
      * Получает точку по позиции в списке.
      * @param positive-int $position
@@ -86,42 +75,6 @@ interface PolylineInterface extends GeometryInterface, IteratorAggregate, Counta
      */
     public function getSections():array;
 
-    /**
-     * Получает протяженность линии.
-     * @param DistanceCalculatorInterface $calculator
-     * @return float
-     */
-    public function getLength( DistanceCalculatorInterface $calculator ):float;
-
-    /***
-     * Возвращает прямой азимут между первой и последней точкой.
-     * @param BearingCalculatorInterface $calculator
-     * @return float
-     */
-    public function getInitialBearing( BearingCalculatorInterface $calculator ):float;
-
-    /***
-     * Возвращает конечный азимут между первой и последней точкой.
-     * @param BearingCalculatorInterface $calculator
-     * @return float
-     */
-    public function getFinalBearing( BearingCalculatorInterface $calculator ):float;
-
-    /**
-     * Возвращает среднюю точку между первой и последней точкой.
-     * @param MidLocationFinderInterface $finder
-     * @return LocationInterface|LocationAggregateInterface|null
-     */
-    public function getMidLocation( MidLocationFinderInterface $finder ):LocationInterface|LocationAggregateInterface|null;
-
-    /**
-     * Возвращает промежуточную точку между первой и последней точкой.
-     * @param IntermediateLocationFinderInterface $finder
-     * @param float $percent
-     * @return LocationInterface|LocationAggregateInterface|null
-     */
-    public function getIntermediateLocation( IntermediateLocationFinderInterface $finder , float $percent ):LocationInterface|LocationAggregateInterface|null;
-
     /***
      * Возвращает полилинию развернутую в обратную сторону.
      * @return PolylineInterface
@@ -133,28 +86,4 @@ interface PolylineInterface extends GeometryInterface, IteratorAggregate, Counta
      * @return LocationsIteratorInterface
      */
     public function getIterator(): LocationsIteratorInterface;
-
-    /**
-     * Определяет, пересекаются ли фигуры.
-     * @param GeometriesIntersectServiceInterface $determinant
-     * @param GeometryInterface $geometry
-     * @return bool
-     */
-    public function intersects( GeometriesIntersectServiceInterface $determinant, GeometryInterface $geometry  ):bool;
-
-    /**
-     * Определяет ориентацию точки относительно
-     * первой и последней точки полилинии.
-     * @param OrientationDeterminantInterface $determinant
-     * @param LocationInterface|LocationAggregateInterface $location
-     * @return int<-1,1>
-     */
-    public function getOrientation( OrientationDeterminantInterface $determinant, LocationInterface|LocationAggregateInterface $location ):int;
-
-    /**
-     * Упрощает полилинию.
-     * @param SimplifierInterface $simplifier
-     * @return $this
-     */
-    public function simplify( SimplifierInterface $simplifier ):static;
 }

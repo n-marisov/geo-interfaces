@@ -38,14 +38,6 @@ interface PolygonInterface extends GeometryInterface, IteratorAggregate, Countab
      */
     public function contains( GeometryInterface $geometry ):bool;
 
-    /**
-    * Определяет, пересекаются ли фигуры.
-    * @param GeometriesIntersectServiceInterface $determinant
-    * @param GeometryInterface $geometry
-    * @return bool
-    */
-    public function intersects( GeometriesIntersectServiceInterface $determinant, GeometryInterface $geometry  ):bool;
-
     /***
      * Перебирает точки наружного кольца полигона.
      * @return LocationsIteratorInterface
