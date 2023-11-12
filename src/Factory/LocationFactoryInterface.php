@@ -18,7 +18,10 @@ interface LocationFactoryInterface
      * @param float $longitude
      * @return LocationInterface
      */
-    public function new( float $latitude, float $longitude ):LocationInterface;
+    public function create( float $latitude, float $longitude ):LocationInterface;
+
+
+
 
     /***
      * Создает точку из точки.

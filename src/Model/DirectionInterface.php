@@ -9,13 +9,13 @@ interface DirectionInterface
 {
     /***
      * Возвращает маршруты.
-     * @return array<RouteInterface>
+     * @return iterable<RouteInterface>
      */
-    public function getRoutes():array;
+    public function getRoutes():iterable;
 
     /**
      * Возвращает путевые точки.
-     * @return array<WaypointInterface>
+     * @return iterable<WaypointInterface>
      */
-    public function getWaypoints():array;
+    public function getWaypoints():iterable;
 }

@@ -5,7 +5,6 @@ use Countable;
 use IteratorAggregate;
 use Maris\Interfaces\Geo\Calculator\AreaCalculatorInterface;
 use Maris\Interfaces\Geo\Calculator\DistanceCalculatorInterface;
-use Maris\Interfaces\Geo\Determinant\GeometriesIntersectServiceInterface;
 use Maris\Interfaces\Geo\Iterator\LocationsIteratorInterface;
 
 /***

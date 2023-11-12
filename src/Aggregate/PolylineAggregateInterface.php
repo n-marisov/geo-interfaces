@@ -7,11 +7,11 @@ use Maris\Interfaces\Geo\Model\PolylineInterface;
 /**
  * Интерфейс для полилиния-подобных объектов.
  */
-interface PolylineAggregateInterface extends GeometryAggregateInterface
+interface PolylineAggregateInterface
 {
     /**
      * Возвращает полилинию.
      * @return PolylineInterface|null
      */
-    public function getGeometry():?PolylineInterface;
+    public function getPolyline():?PolylineInterface;
 }

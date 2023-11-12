@@ -2,13 +2,12 @@
 
 namespace Maris\Interfaces\Geo\Model;
 
-use Maris\Interfaces\Geo\Aggregate\AddressAggregateInterface;
 use Maris\Interfaces\Geo\Aggregate\LocationAggregateInterface;
 
 /***
  * Интерфейс точки интереса.
  */
-interface PlaceInterface extends AddressAggregateInterface, LocationAggregateInterface
+interface PlaceInterface extends LocationAggregateInterface
 {
     /**
      * Возвращает название точки интереса.

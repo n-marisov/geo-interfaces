@@ -8,11 +8,11 @@ use Maris\Interfaces\Geo\Model\LocationInterface;
  * Интерфейс для объектов способных возвращать
  * точку в обычной системе координат.
  */
-interface LocationAggregateInterface extends GeometryAggregateInterface
+interface LocationAggregateInterface
 {
     /***
      * Возвращает координату.
      * @return LocationInterface|null
      */
-    public function getGeometry(): ?LocationInterface;
+    public function getLocation(): ?LocationInterface;
 }
